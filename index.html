@@ -2,11 +2,11 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>앱 다운로드 중...</title>
+  <title>공모주 매니저 앱 다운로드</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap&subset=korean" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap">
 
   <!-- 스타일시트 링크 -->
   <link rel="stylesheet" href="styles.css">
@@ -23,7 +23,7 @@
     //       window.location.href = "https://apps.apple.com/us/app/id6737213881";
     //     } else {
     //       // 데스크톱 또는 기타 기기의 경우
-    //       window.location.href = "https://yourwebsite.com";
+    //       // 원하는 동작이 있다면 여기에 추가하세요.
     //     }
     //   }, 2000); // 2초 후 리디렉션
     // };
@@ -31,23 +31,29 @@
 </head>
 <body>
   <div class="container">
-    <!-- 로고 -->
-    <img src="logo.png" alt="앱 로고" class="logo">
+    <!-- 앱 아이콘 -->
+    <img src="app-icon.png" alt="공모주 매니저 아이콘" class="app-icon">
 
-    <!-- 메인 메시지 -->
-    <h1>앱으로 이동 중입니다</h1>
+    <!-- 안내 메시지 -->
+    <div class="message">
+      <p>접속하신 기기 환경에 맞게</p>
+      <p><strong>'공모주 매니저'</strong> 앱을</p>
+      <p>받을 수 있는 곳으로 이동 중이에요</p>
+    </div>
 
-    <!-- 서브 메시지 -->
-    <p>잠시만 기다려주세요.</p>
+    <!-- 리디렉션이 안되는 경우 안내 -->
+    <p class="redirect-message">혹시 페이지 이동이 이뤄지지 않았다면<br>아래 링크를 통해 이동해 주세요</p>
 
-    <!-- 로딩 애니메이션 -->
-    <div class="spinner"></div>
-
-    <!-- 수동 다운로드 링크 -->
-    <p class="small-text">자동으로 리디렉션되지 않으면 아래 링크를 클릭해주세요:</p>
-    <div class="button-group">
-      <a href="https://apps.apple.com/us/app/id6737213881" class="button ios">iOS 앱 다운로드</a>
-      <a href="https://play.google.com/store/apps/details?id=kr.raom.publicOfferingManager" class="button android">안드로이드 앱 다운로드</a>
+    <!-- 스토어 링크 버튼 -->
+    <div class="store-buttons">
+      <a href="https://apps.apple.com/us/app/id6737213881" class="store-button">
+        <img src="app-store-icon.png" alt="App Store">
+        App Store
+      </a>
+      <a href="https://play.google.com/store/apps/details?id=kr.raom.publicOfferingManager" class="store-button">
+        <img src="google-play-icon.png" alt="Google Play">
+        Google Play
+      </a>
     </div>
   </div>
 </body>
