@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>앱 다운로드</title>
+  <script>
+    window.onload = function() {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      if (/android/i.test(userAgent)) {
+        window.location.href = "https://play.google.com/store/apps/details?id=kr.raom.publicOfferingManager";
+      } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        window.location.href = "https://apps.apple.com/us/app/id6737213881";
+      } else {
+        // 데스크톱 또는 기타 기기의 경우
+        window.location.href = "https://slashpage.com/public-offering-manager";
+      }
+    };
+  </script>
+</head>
+<body>
+  <h1>앱으로 이동 중...</h1>
+  <p>자동으로 리디렉션되지 않으면 아래 링크를 클릭해주세요:</p>
+  <ul>
+    <li><a href="https://play.google.com/store/apps/details?id=kr.raom.publicOfferingManager">안드로이드 앱 다운로드</a></li>
+    <li><a href="https://apps.apple.com/us/app/id6737213881">iOS 앱 다운로드</a></li>
+  </ul>
+</body>
+</html>
