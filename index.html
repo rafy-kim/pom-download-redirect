@@ -2,7 +2,13 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>앱 다운로드</title>
+  <title>앱 다운로드 중...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 스타일시트 링크 -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- 스크립트 -->
   <script>
     window.onload = function() {
       var userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -13,17 +19,28 @@
         window.location.href = "https://apps.apple.com/us/app/id6737213881";
       } else {
         // 데스크톱 또는 기타 기기의 경우
-        window.location.href = "https://slashpage.com/public-offering-manager";
+        window.location.href = "https://yourwebsite.com";
       }
     };
   </script>
 </head>
 <body>
-  <h1>앱으로 이동 중...</h1>
-  <p>자동으로 리디렉션되지 않으면 아래 링크를 클릭해주세요:</p>
-  <ul>
-    <li><a href="https://play.google.com/store/apps/details?id=kr.raom.publicOfferingManager">안드로이드 앱 다운로드</a></li>
-    <li><a href="https://apps.apple.com/us/app/id6737213881">iOS 앱 다운로드</a></li>
-  </ul>
+  <div class="container">
+    <!-- 로고 또는 이미지 -->
+    <img src="logo.png" alt="앱 로고" class="logo">
+
+    <!-- 로딩 메시지 -->
+    <h1>앱으로 이동 중입니다...</h1>
+
+    <!-- 로딩 애니메이션 -->
+    <div class="loader"></div>
+
+    <!-- 수동 다운로드 링크 -->
+    <p>자동으로 리디렉션되지 않으면 아래 링크를 클릭해주세요:</p>
+    <ul>
+      <li><a href="https://play.google.com/store/apps/details?id=kr.raom.publicOfferingManager">안드로이드 앱 다운로드</a></li>
+      <li><a href="https://apps.apple.com/us/app/id6737213881">iOS 앱 다운로드</a></li>
+    </ul>
+  </div>
 </body>
 </html>
