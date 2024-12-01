@@ -6,53 +6,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Google Fonts -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap">
 
   <!-- 스타일시트 링크 -->
   <link rel="stylesheet" href="styles.css">
 
   <!-- 스크립트 -->
   <script>
-    // window.onload = function() {
-    //   setTimeout(function() {
-    //     var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    window.onload = function() {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      var isMobile = /android/i.test(userAgent) || (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream);
+      
+      // 모바일 기기가 아닌 경우 데스크톱 메시지 표시
+      if (!isMobile) {
+        document.querySelector('.desktop-message').style.display = 'block';
+        document.querySelector('.mobile-message').style.display = 'none';
+        document.querySelector('.loading-animation').style.display = 'none';
+      }
 
-    //     if (/android/i.test(userAgent)) {
-    //       window.location.href = "https://play.google.com/store/apps/details?id=kr.raom.publicOfferingManager";
-    //     } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-    //       window.location.href = "https://apps.apple.com/us/app/id6737213881";
-    //     } else {
-    //       // 데스크톱 또는 기타 기기의 경우
-    //       // 원하는 동작이 있다면 여기에 추가하세요.
-    //     }
-    //   }, 2000); // 2초 후 리디렉션
-    // };
+      // 모바일 기기인 경우 리다이렉션
+      setTimeout(function() {
+        if (/android/i.test(userAgent)) {
+          window.location.href = "https://play.google.com/store/apps/details?id=kr.raom.publicOfferingManager";
+        } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+          window.location.href = "https://apps.apple.com/us/app/id6737213881";
+        }
+      }, 1000);
+    };
   </script>
 </head>
 <body>
   <div class="container">
     <!-- 앱 아이콘 -->
-    <img src="app-icon.png" alt="공모주 매니저 아이콘" class="app-icon">
+    <img src="logo.png" alt="공모주 매니저 아이콘" class="app-icon">
 
-    <!-- 안내 메시지 -->
-    <div class="message">
-      <p>접속하신 기기 환경에 맞게</p>
-      <p><strong>'공모주 매니저'</strong> 앱을</p>
-      <p>받을 수 있는 곳으로 이동 중이에요</p>
+    <!-- 로딩 애니메이션 -->
+    <div class="loading-animation">
+      <div class="spinner"></div>
     </div>
 
-    <!-- 리디렉션이 안되는 경우 안내 -->
-    <p class="redirect-message">혹시 페이지 이동이 이뤄지지 않았다면<br>아래 링크를 통해 이동해 주세요</p>
+    <!-- 모바일 사용자용 메시지 -->
+    <div class="message mobile-message">
+      <h1>공모주 매니저</h1>
+      <p class="main-text">스토어로 이동하고 있습니다</p>
+      <p class="sub-text">잠시만 기다려 주세요...</p>
+    </div>
+
+    <!-- 데스크톱 사용자용 메시지 -->
+    <div class="message desktop-message">
+      <h1>공모주 매니저</h1>
+      <p class="main-text">모바일 전용 앱입니다</p>
+      <p class="sub-text">스마트폰으로 접속하시거나<br>아래 스토어 링크를 통해 다운로드 해주세요</p>
+    </div>
 
     <!-- 스토어 링크 버튼 -->
     <div class="store-buttons">
-      <a href="https://apps.apple.com/us/app/id6737213881" class="store-button">
-        <img src="app-store-icon.png" alt="App Store">
-        App Store
+      <a href="https://apps.apple.com/us/app/id6737213881" class="store-button ios">
+        <img src="apple_logo.png" alt="App Store">
+        <span>App Store</span>
       </a>
-      <a href="https://play.google.com/store/apps/details?id=kr.raom.publicOfferingManager" class="store-button">
-        <img src="google-play-icon.png" alt="Google Play">
-        Google Play
+      <a href="https://play.google.com/store/apps/details?id=kr.raom.publicOfferingManager" class="store-button android">
+        <img src="google_logo.png" alt="Google Play">
+        <span>Play Store</span>
       </a>
     </div>
   </div>
